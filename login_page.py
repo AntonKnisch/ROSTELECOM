@@ -11,24 +11,24 @@ class LoginPage:
         self.customer_support_selector = ".customer-support"
 
     def open(self):
-        self.driver.get(self.url)
+        self.driver.get("https://b2c.passport.rt.ru/account_b2c/login")
+
+    def get_username(self):
+        username_input = self.driver.find_element(*self.username_input)
+        return username_input.get_attribute("value")
+
+    def get_password(self):
+        password_input = self.driver.find_element(*self.password_input)
+        return password_input.get_attribute("value")
+
+    def input_username(self, username):
+        username_input = self.driver.find_element(*self.username_input)
+        username_input.send_keys(username)
+
+    def input_password(self, password):
+        password_input = self.driver.find_element(*self.password_input)
+        password_input.send_keys(password)
 
     def get_tab_titles(self):
         tabs = self.driver.find_elements_by_css_selector(self.tabs_selector)
-        return [tab.text for tab in tabs]
 
-    def get_form_input_titles(self):
-        forms = self.driver.find_elements_by_css_selector(self.form_inputs_selector)
-        return [form.get_attribute("placeholder") for form in forms]
-
-    def get_default_tab_text(self):
-        default_tab = self.driver.find_element_by_css_selector(self.default_tab_selector)
-        return default_tab.text
-
-    def get_product_slogan(self):
-        product_slogan = self.driver.find_element_by_css_selector(self.product_slogan_selector)
-        return product_slogan.text
-
-    def is_customer_support_displayed(self):
-        customer_support = self.driver.find_element_by_css_selector(self.customer_support_selector)
-        return customer_support.is_displayed()

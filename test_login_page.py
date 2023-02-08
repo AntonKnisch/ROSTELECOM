@@ -1,13 +1,11 @@
-# test_login_page.py
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+import time
 from login_page import LoginPage
 
 def setup_module(module):
-    options = webdriver.ChromeOptions()
-    options.add_argument("--disable-extensions")
-    options.add_argument("--disable-gpu")
-    options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--no-sandbox")
+    options = Options()
+    options.headless = True
     module.driver = webdriver.Chrome(options=options)
 
 def teardown_module(module):
@@ -43,4 +41,5 @@ def test_form_input():
     login_page.input_password("test_password")
     assert login_page.get_username() == "test_username"
     assert login_page.get_password() == "test_password"
+    time.sleep(3) # add sleep to view execution
     driver.quit()

@@ -24,3 +24,7 @@ class LoginPage:
 
     def submit(self):
         self.driver.find_element_by_xpath("//input[@type='submit']").click()
+
+    def get_tab_titles(self):
+        tabs = self.driver.find_elements_by_css_selector(self.tabs_selector)
+        return [tab.text for tab in tabs]
