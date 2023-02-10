@@ -100,10 +100,19 @@ class LoginPage(BasePage):
 
     def get_username_input_field_placeholder_text(self):
         username_input_field = self.driver.find_element(*self.locators.USERNAME_INPUT)
-        return username_input_field.get_attribute("placeholder")
+        return username_input_field.get_attribute("Мобильный телефон")
 
     def get_password_input_field_placeholder_text(self):
-        pass
+        password_input_fild = self.driver.find_element(*self.locators.PASSWORD_INPUT)
+        return password_input_fild.get_attribute("Пароль")
 
     def submit(self):
-        pass
+        submit_button =self.driver.find_element(*self.locators.LOGIN_BUTTON)
+        submit_button.click()
+
+    def get_username_input_field_type(self):
+        username_input_field = self.driver.find_element(*self.locators.USERNAME_INPUT)
+        return username_input_field.get_attribute("type")
+    def get_password_input_field_type(self):
+        password_input_field = self.driver.find_element(*self.locators.PASSWORD_INPUT)
+        return password_input_field.get_attribute("type")

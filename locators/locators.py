@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 
 class LoginPageLocators:
+    REMEMBER_ME_CHECKBOX = None
     PASSWORD_LABEL = None
     USERNAME_LABEL = None
     LOGIN_FORM = None
