@@ -90,15 +90,15 @@ def test_form_input_field_types():
     driver = webdriver.Chrome()
     login_page = LoginPage(driver)
     login_page.open()
-    assert login_page.get_username_input_field_type() == "email"
-    assert login_page.get_password_input_field_type() == "password"
+    assert login_page.get_username_input_field_type() == "Почта"
+    assert login_page.get_password_input_field_type() == "Пароль"
     driver.quit()
 
 def test_form_element_placeholder_text():
     driver = webdriver.Chrome()
     login_page = LoginPage(driver)
     login_page.open()
-    assert login_page.get_username_input_field_placeholder_text() == "Логин"
+    assert login_page.get_username_input_field_placeholder_text() == "Электронная почта"
     assert login_page.get_password_input_field_placeholder_text() == "Пароль"
     driver.quit()
 def test_form_element_labels():
