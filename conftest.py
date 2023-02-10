@@ -3,6 +3,8 @@ import pytest
 import requests
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
+from pages.login_page import LoginPage
+
 
 @pytest.fixture(scope='function')
 def driver():
