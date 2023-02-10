@@ -1,11 +1,6 @@
 from selenium.webdriver.common.by import By
 
 class LoginPageLocators:
-    REMEMBER_ME_CHECKBOX = None
-    PASSWORD_LABEL = None
-    USERNAME_LABEL = None
-    LOGIN_FORM = None
-    PROFILE_LINK = None
     USERNAME_INPUT = (By.ID, "username")
     PASSWORD_INPUT = (By.ID, "password")
     LOGIN_BUTTON = (By.XPATH, "//button[contains(text(), 'Войти')]")

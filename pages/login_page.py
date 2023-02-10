@@ -113,6 +113,15 @@ class LoginPage(BasePage):
     def get_username_input_field_type(self):
         username_input_field = self.driver.find_element(*self.locators.USERNAME_INPUT)
         return username_input_field.get_attribute("type")
+
+    def get_password_input_field_type(self):
+        password_input_field = self.driver.find_element(*self.locators.PASSWORD_INPUT)
+        return password_input_field.get_attribute("type")
+
+    def get_username_input_field_type(self):
+        username_input_field = self.driver.find_element(*self.locators.USERNAME_INPUT)
+        return username_input_field.get_attribute("type")
+
     def get_password_input_field_type(self):
         password_input_field = self.driver.find_element(*self.locators.PASSWORD_INPUT)
         return password_input_field.get_attribute("type")
